@@ -76,7 +76,11 @@
         hashtag: hashtag {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&hrm LEFT_ALT KP_NUMBER_3 &hrm LEFT_ALT KP_NUMBER_5>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT &kp KP_NUMBER_3 &kp KP_NUMBER_5>,
+                <&macro_release>;
+
             label = "HASHTAG";
         };
 
@@ -99,6 +103,17 @@
             #binding-cells = <0>;
             bindings = <&kp LC(Y)>;
             label = "REDO";
+        };
+
+        tire: tire {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_5 &kp KP_NUMBER_1>,
+                <&macro_release>;
+
+            label = "TIRE";
         };
     };
 
@@ -148,7 +163,7 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&kp ESCAPE  &trans         &trans            &trans                &trans                 &trans                                  &trans            &trans           &trans         &trans     &trans          &trans
+&kp ESCAPE  &tire          &trans            &trans                &trans                 &trans                                  &trans            &trans           &trans         &trans     &trans          &trans
 &trans      &kp MINUS      &kp PLUS          &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE                                &trans            &undo            &kp PAGE_DOWN  &kp PG_UP  &redo           &trans
 &trans      &kp UNDER      &kp EQUAL         &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH                           &kp HOME          &kp LEFT         &kp DOWN       &kp UP     &kp RIGHT       &kp END
 &trans      &kp LESS_THAN  &kp GREATER_THAN  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SLASH      &kp AMPERSAND    &trans  &paste_clipboard  &copy_clipboard  &none          &none      &cut_clipboard  &trans
