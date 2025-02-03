@@ -77,7 +77,7 @@
         hashtag: hashtag {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT(KP_NUMBER_3(KP_NUMBER_5))>;
+            bindings = <&macro_tap &kp LALT &kp N3 &kp N5>;
             label = "HASHTAG";
         };
 
@@ -105,7 +105,7 @@
         tire: tire {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt LEFT_ALT(KP_NUMBER_0(KP_NUMBER_1(KP_NUMBER_5(KP_NUMBER_1))))>;
+            bindings = <&macro_tap &kp LALT &kp KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_5 &kp KP_NUMBER_1>;
             label = "TIRE";
         };
     };
