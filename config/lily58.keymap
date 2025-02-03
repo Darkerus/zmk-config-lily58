@@ -20,6 +20,11 @@
             key-positions = <0 1>;
             bindings = <&kp ESC>;
         };
+
+        layer3 {
+            bindings = <&mo 3>;
+            key-positions = <52 55>;
+        };
     };
 
     behaviors {
@@ -188,12 +193,5 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        condition_layer3 {
-            if-layers = <1 2 0>;
-            then-layer = <3>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
