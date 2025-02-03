@@ -135,11 +135,11 @@
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp GRAVE       &kp NUMBER_1  &kp N2  &kp N3    &kp N4            &kp N5                              &kp N6  &kp N7  &kp N8         &kp N9   &kp N0    &kp RIGHT_BRACKET
-&kp TAB         &kp Q         &kp W   &kp E     &kp R             &kp T                               &kp Y   &kp U   &kp I          &kp O    &kp P     &kp LEFT_BRACKET
-&kp LEFT_SHIFT  &kp A         &kp S   &kp D     &kp F             &kp G                               &kp H   &kp J   &kp K          &kp L    &kp SEMI  &kp SQT
-&kp LCTRL       &kp Z         &kp X   &kp C     &kp V             &kp B   &kp DEL      &kp ENTER      &kp N   &kp M   &kp COMMA      &kp DOT  &kp FSLH  &kp RSHFT
-                                      &kp LALT  &change_language  &mo 1   &kp SPACE    &kp BACKSPACE  &mo 2   &mo 3   &kp RIGHT_WIN
+&kp GRAVE       &kp NUMBER_1  &kp N2  &kp N3    &kp N4            &kp N5                              &kp N6  &kp N7   &kp N8         &kp N9   &kp N0    &kp RIGHT_BRACKET
+&kp TAB         &kp Q         &kp W   &kp E     &kp R             &kp T                               &kp Y   &kp U    &kp I          &kp O    &kp P     &kp LEFT_BRACKET
+&kp LEFT_SHIFT  &kp A         &kp S   &kp D     &kp F             &kp G                               &kp H   &kp J    &kp K          &kp L    &kp SEMI  &kp SQT
+&kp LCTRL       &kp Z         &kp X   &kp C     &kp V             &kp B   &kp DEL      &kp ENTER      &kp N   &kp M    &kp COMMA      &kp DOT  &kp FSLH  &kp RSHFT
+                                      &kp LALT  &change_language  &mo 1   &kp SPACE    &kp BACKSPACE  &mo 2   &kp DEL  &kp RIGHT_WIN
             >;
         };
 
@@ -186,6 +186,16 @@
                                     &trans          &trans           &trans          &trans    &trans  &trans          &trans          &trans
             >;
         };
+
+        layer_4 {
+            bindings = <
+&kp ESCAPE  &bt BT_PRV  &bt BT_NXT  &bt BT_CLR_ALL  &kp PRINTSCREEN  &kp SCROLLLOCK                    &kp C_PREVIOUS  &kp C_PLAY      &kp C_NEXT      &kp C_MUTE    &kp C_VOL_DN     &kp C_VOLUME_UP
+&kp F1      &kp F2      &kp F3      &kp F4          &kp F5           &kp F6                            &kp F7          &kp F8          &kp F9          &kp F10       &kp F11          &kp F12
+&kp CAPS    &mkp MB4    &mkp MB5    &mkp MB2        &mkp LCLK        &none                             &none           &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
+&trans      &none       &none       &none           &none            &none           &trans    &trans  &none           &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &kp RIGHT_ALT
+                                    &trans          &trans           &trans          &trans    &trans  &trans          &trans          &trans
+            >;
+        };
     };
 
     conditional_layers {
@@ -193,12 +203,7 @@
 
         layer3 {
             if-layers = <1 2>;
-            then-layer = <3>;
-        };
-
-        layer32 {
-            if-layers = <2 1>;
-            then-layer = <3>;
+            then-layer = <4>;
         };
     };
 };
