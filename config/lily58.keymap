@@ -80,7 +80,7 @@
                 <&macro_press>,
                 <&kp LALT>,
                 <&macro_tap>,
-                <&kp N3 &kp N5>,
+                <&kp KP_NUMBER_3 &kp KP_NUMBER_5>,
                 <&macro_release>,
                 <&kp LALT>;
 
@@ -192,7 +192,7 @@
         compatible = "zmk,conditional-layers";
 
         condition_layer3 {
-            if-layers = <1 2>;
+            if-layers = <1 2 0>;
             then-layer = <3>;
         };
     };
