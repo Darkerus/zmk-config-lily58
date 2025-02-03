@@ -55,21 +55,21 @@
         change_language: change_language {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&hrm RIGHT_WIN SPACE>;
+            bindings = <&kp RG(SPACE)>;
             label = "CHANGE_LANGUAGE";
         };
 
         copy_clipboard: copy_clipboard {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&hrm LCTRL C>;
+            bindings = <&kp LC(C)>;
             label = "COPY_CLIPBOARD";
         };
 
         paste_clipboard: paste_clipboard {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&hrm LCTRL V>;
+            bindings = <&kp LC(V)>;
             label = "PASTE_CLIPBOARD";
         };
 
@@ -83,21 +83,21 @@
         cut_clipboard: cut_clipboard {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&hrm LCTRL X>;
+            bindings = <&kp LC(X)>;
             label = "CUT_CLIPBOARD";
         };
 
         undo: undo {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&hrm LCTRL Z>;
+            bindings = <&kp LC(Z)>;
             label = "UNDO";
         };
 
         redo: redo {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&hrm LCTRL Y>;
+            bindings = <&kp LC(Y)>;
             label = "REDO";
         };
     };
@@ -135,7 +135,7 @@
 &trans      &kp EXCLAMATION  &kp AT_SIGN      &kp POUND        &kp DOLLAR       &kp PERCENT                        &kp CARET        &kp AMPERSAND    &kp ASTERISK     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
 &trans      &kp NUMBER_1     &kp NUMBER_2     &kp NUMBER_3     &kp NUMBER_4     &kp NUMBER_5                       &kp NUMBER_6     &kp N7           &kp N8           &kp N9                &kp N0                 &trans
 &trans      &trans           &trans           &hashtag         &trans           &trans           &trans    &trans  &kp KP_MULTIPLY  &kp KP_PLUS      &kp KP_SUBTRACT  &kp KP_DIVIDE         &kp KP_DOT             &kp RIGHT_ALT
-                                              &trans           &trans           &trans           &trans    &trans  &trans           &trans           &trans
+                                              &trans           &trans           &trans           &trans    &trans  &mo 3            &trans           &trans
             >;
         };
 
@@ -152,27 +152,20 @@
 &trans      &kp MINUS      &kp PLUS          &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE                                &trans            &undo            &kp PAGE_DOWN  &kp PG_UP  &redo           &trans
 &trans      &kp UNDER      &kp EQUAL         &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH                           &kp HOME          &kp LEFT         &kp DOWN       &kp UP     &kp RIGHT       &kp END
 &trans      &kp LESS_THAN  &kp GREATER_THAN  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SLASH      &kp AMPERSAND    &trans  &paste_clipboard  &copy_clipboard  &none          &none      &cut_clipboard  &trans
-                                             &trans                &sk LEFT_WIN           &trans         &trans           &trans  &trans            &trans           &trans
+                                             &trans                &sk LEFT_WIN           &mo 3          &trans           &trans  &trans            &trans           &trans
             >;
         };
 
         mouse_layer {
             bindings = <
-&kp ESCAPE  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &kp PRINTSCREEN  &kp SCROLLLOCK                    &kp C_PREVIOUS  &kp C_PLAY      &kp C_NEXT      &kp C_MUTE    &kp C_VOL_DN     &kp C_VOLUME_UP
-&kp F1      &kp F2        &kp F3        &kp F4        &kp F5           &kp F6                            &kp F7          &kp F8          &kp F9          &kp F10       &kp F11          &kp F12
-&kp CAPS    &mkp MB4      &mkp MB5      &mkp MB2      &mkp LCLK        &none                             &none           &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
-&trans      &none         &none         &none         &none            &none           &trans    &trans  &none           &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &kp RIGHT_ALT
-                                        &trans        &trans           &trans          &trans    &trans  &trans          &trans          &trans
+&kp ESCAPE  &bt BT_PRV  &bt BT_NXT  &bt BT_CLR_ALL  &kp PRINTSCREEN  &kp SCROLLLOCK                    &kp C_PREVIOUS  &kp C_PLAY      &kp C_NEXT      &kp C_MUTE    &kp C_VOL_DN     &kp C_VOLUME_UP
+&kp F1      &kp F2      &kp F3      &kp F4          &kp F5           &kp F6                            &kp F7          &kp F8          &kp F9          &kp F10       &kp F11          &kp F12
+&kp CAPS    &mkp MB4    &mkp MB5    &mkp MB2        &mkp LCLK        &none                             &none           &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
+&trans      &none       &none       &none           &none            &none           &trans    &trans  &none           &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &kp RIGHT_ALT
+                                    &trans          &trans           &trans          &trans    &trans  &trans          &trans          &trans
             >;
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        Last_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
