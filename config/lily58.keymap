@@ -20,6 +20,11 @@
             key-positions = <0 1>;
             bindings = <&kp ESC>;
         };
+
+        layer_3_combo {
+            bindings = <&mo 3>;
+            key-positions = <52 55>;
+        };
     };
 
     behaviors {
@@ -156,7 +161,7 @@
 &trans      &kp EXCLAMATION  &kp AT_SIGN      &kp POUND        &kp DOLLAR       &kp PERCENT                        &kp CARET        &kp AMPERSAND    &kp ASTERISK     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
 &trans      &kp NUMBER_1     &kp NUMBER_2     &kp NUMBER_3     &kp NUMBER_4     &kp NUMBER_5                       &kp NUMBER_6     &kp N7           &kp N8           &kp N9                &kp N0                 &trans
 &trans      &trans           &trans           &hashtag         &trans           &trans           &trans    &trans  &kp KP_MULTIPLY  &kp KP_PLUS      &kp KP_SUBTRACT  &kp KP_DIVIDE         &kp KP_DOT             &kp RIGHT_ALT
-                                              &trans           &trans           &trans           &trans    &trans  &mo 3            &trans           &trans
+                                              &trans           &trans           &trans           &trans    &trans  &trans           &trans           &trans
             >;
         };
 
@@ -173,7 +178,7 @@
 &trans      &kp MINUS      &kp PLUS          &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE                                &trans            &undo            &kp PAGE_DOWN  &kp PG_UP  &redo           &trans
 &trans      &kp UNDER      &kp EQUAL         &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH                           &kp HOME          &kp LEFT         &kp DOWN       &kp UP     &kp RIGHT       &kp END
 &trans      &kp LESS_THAN  &kp GREATER_THAN  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SLASH      &kp AMPERSAND    &trans  &paste_clipboard  &copy_clipboard  &none          &none      &cut_clipboard  &trans
-                                             &trans                &sk LEFT_WIN           &mo 3          &trans           &trans  &trans            &trans           &trans
+                                             &trans                &sk LEFT_WIN           &trans         &trans           &trans  &trans            &trans           &trans
             >;
         };
 
