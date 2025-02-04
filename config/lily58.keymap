@@ -8,7 +8,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-
+#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     combos {
@@ -93,12 +94,12 @@
         };
     };
 
-conditional_layers {
+    conditional_layers {
         compatible = "zmk,conditional-layers";
 
         layer_mous {
-            if-layers = <raise_layer lower_layer>;
-            then-layer = <layer_3>;
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 
@@ -118,24 +119,7 @@ conditional_layers {
 &kp TAB         &kp Q         &kp W   &kp E     &kp R             &kp T                               &kp Y   &kp U    &kp I          &kp O    &kp P     &kp LEFT_BRACKET
 &kp LEFT_SHIFT  &kp A         &kp S   &kp D     &kp F             &kp G                               &kp H   &kp J    &kp K          &kp L    &kp SEMI  &kp SQT
 &kp LCTRL       &kp Z         &kp X   &kp C     &kp V             &kp B   &kp DEL      &kp ENTER      &kp N   &kp M    &kp COMMA      &kp DOT  &kp FSLH  &kp RSHFT
-                                      &kp LALT  &change_language  &mo 2   &kp SPACE    &kp BACKSPACE  &mo 1   &kp DEL  &kp RIGHT_WIN
-            >;
-        };
-
-        raise_layer {
-            // ------------------------------------------------------------------------------------------------------------
-            // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
-            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
-            // |   F1  |  F2 |  F3 |  F4  |  F5  |  F6  |                   |      |   <-  |   v   |  ^   |  ->   |       |
-            // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
-            //                     |      |      |      |        |  |       |      |       |       |
-
-            bindings = <
-&kp ESCAPE  &tire          &trans            &trans                &trans                 &trans                                  &trans            &trans           &trans         &trans     &trans          &trans
-&trans      &kp MINUS      &kp PLUS          &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE                                &trans            &undo            &kp PAGE_DOWN  &kp PG_UP  &redo           &trans
-&trans      &kp UNDER      &kp EQUAL         &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH                           &kp HOME          &kp LEFT         &kp DOWN       &kp UP     &kp RIGHT       &kp END
-&trans      &kp LESS_THAN  &kp GREATER_THAN  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SLASH      &kp AMPERSAND    &trans  &paste_clipboard  &copy_clipboard  &none          &none      &cut_clipboard  &trans
-                                             &trans                &sk LEFT_WIN           &trans         &trans           &trans  &trans            &trans           &trans
+                                      &kp LALT  &change_language  &mo 1   &kp SPACE    &kp BACKSPACE  &mo 2   &kp DEL  &kp RIGHT_WIN
             >;
         };
 
@@ -153,6 +137,23 @@ conditional_layers {
 &trans      &kp NUMBER_1     &kp NUMBER_2     &kp NUMBER_3     &kp NUMBER_4     &kp NUMBER_5                       &kp NUMBER_6     &kp N7           &kp N8           &kp N9                &kp N0                 &trans
 &trans      &trans           &trans           &hashtag         &trans           &trans           &trans    &trans  &kp KP_MULTIPLY  &kp KP_PLUS      &kp KP_SUBTRACT  &kp KP_DIVIDE         &kp KP_DOT             &kp RIGHT_ALT
                                               &trans           &trans           &trans           &trans    &trans  &trans           &trans           &trans
+            >;
+        };
+
+        raise_layer {
+            // ------------------------------------------------------------------------------------------------------------
+            // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
+            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
+            // |   F1  |  F2 |  F3 |  F4  |  F5  |  F6  |                   |      |   <-  |   v   |  ^   |  ->   |       |
+            // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
+            //                     |      |      |      |        |  |       |      |       |       |
+
+            bindings = <
+&kp ESCAPE  &tire          &trans            &trans                &trans                 &trans                                  &trans            &trans           &trans         &trans     &trans          &trans
+&trans      &kp MINUS      &kp PLUS          &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE                                &trans            &undo            &kp PAGE_DOWN  &kp PG_UP  &redo           &trans
+&trans      &kp UNDER      &kp EQUAL         &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH                           &kp HOME          &kp LEFT         &kp DOWN       &kp UP     &kp RIGHT       &kp END
+&trans      &kp LESS_THAN  &kp GREATER_THAN  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SLASH      &kp AMPERSAND    &trans  &paste_clipboard  &copy_clipboard  &none          &none      &cut_clipboard  &trans
+                                             &trans                &sk LEFT_WIN           &trans         &trans           &trans  &trans            &trans           &trans
             >;
         };
 
